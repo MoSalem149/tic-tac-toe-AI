@@ -1,0 +1,87 @@
+/* Reset default padding, margin, and box sizing for all elements */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Define CSS variables and their values for reuse */
+:root {
+    --primary-color: #1D3557;
+    --secondary-color: #457B9D;
+    --accent-color: #F1FAEE;
+    --text-color: #F1FAEE;
+    --winning-blocks: #E63946;
+}
+
+/* Apply font and color to text content within body element */
+body {
+    color: var(--text-color);
+    font-family: 'Finger Paint', cursive;
+    background-color: var(--primary-color);
+}
+
+/* Style for h1 headings */
+h1 {
+    font-size: 54px;
+    text-transform: uppercase;
+}
+
+/* Style for container element */
+.container {
+    padding: 40px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Style for gameboard element */
+#gameboard {
+    width: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+/* Style for each box within gameboard */
+.box {
+    height: 100px;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-color);
+    font-size: 120px;
+    border-right: 2px solid var(--secondary-color);
+    border-bottom: 2px solid var(--secondary-color);
+}
+
+/* Style for every third box to remove right border */
+.box:nth-child(3n) {
+    border-right: none;
+}
+
+/* Style for all boxes after the sixth box to remove bottom border */
+.box:nth-child(6)~.box {
+    border-bottom: none;
+}
+
+/* Style for all button elements on the page */
+button {
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border-color: var(--secondary-color);
+    font-size: 18px;
+    transition: 200ms transform;
+    font-weight: 600;
+}
+
+/* Style for button when it is being hovered over */
+button:hover {
+    cursor: pointer;
+    transform: translateY(-2px);
+}
